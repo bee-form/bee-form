@@ -1,5 +1,5 @@
-import {getPathData} from "../form/arr-path";
-import {parseValueNodes} from "../path-pattern/path-pattern";
+import {getPathData} from "../core/form/arr-path";
+import {parseValueNodes} from "../core/path-pattern/path-pattern";
 
 export const equalsPath = (path) => {
     let p = parseValueNodes(path);

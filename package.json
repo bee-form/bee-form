@@ -4,6 +4,8 @@
   "description": "A form library that is based on event bus architecture",
   "scripts": {
     "build-react": "rollup --config build/react-rollup.config.js --sourcemap --environment MINIFY,FORMAT:umd",
+    "build-validators": "rollup --config build/validators-rollup.config.js --sourcemap --environment MINIFY,FORMAT:umd",
+    "build-tunnels": "rollup --config build/tunnels-rollup.config.js --sourcemap --environment MINIFY,FORMAT:umd",
     "build-sync-form": "rollup --config build/sync-form-rollup.config.js --sourcemap --environment MINIFY,FORMAT:umd"
   },
   "author": "quanla",

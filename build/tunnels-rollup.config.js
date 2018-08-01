@@ -1,7 +1,7 @@
 import config from "./rollup.common.config";
 
 export default config({
-    folder: "react",
-    name: "bee-form-react",
+    folder: "tunnels",
+    name: "bee-form-tunnels",
     index: "index.mjs",
 });

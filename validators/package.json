@@ -1,0 +1,11 @@
+{
+  "name": "bee-form-validators",
+  "version": "0.3.0",
+  "description": "Validators to be used in both bee-form and sync-form",
+  "main": "dist/bee-form-validators.umd.min.js",
+  "author": "quanla",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+  }
+}
