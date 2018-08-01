@@ -1,0 +1,11 @@
+{
+  "name": "sync-form",
+  "version": "0.3.0",
+  "description": "An even more light-weight sibling of Bee-Form, which supports dynamic formConfig and external data",
+  "main": "dist/sync-form.umd.min.js",
+  "author": "quanla",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+  }
+}

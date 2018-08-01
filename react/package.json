@@ -1,0 +1,13 @@
+{
+  "name": "bee-form-react",
+  "version": "0.3.0",
+  "main": "dist/bee-form-react.umd.min.js",
+  "author": "quanla",
+  "license": "ISC",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+  }
+}
