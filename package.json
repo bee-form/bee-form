@@ -3,7 +3,8 @@
   "version": "0.3.0",
   "description": "A form library that is based on event bus architecture",
   "scripts": {
-    "build": "node ./build/make-it-roll.js"
+    "build": "node ./build/build.js",
+    "watch": "node ./build/watch.js"
   },
   "author": "quanla",
   "license": "ISC",
