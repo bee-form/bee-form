@@ -13,7 +13,6 @@ import {humanName} from "./human-name";
 import {phone} from "./phone";
 
 export {
-    notEqualsPath,
     equals,
     humanName,
     phone,
@@ -21,6 +20,7 @@ export {
     either,
     colNotEmpty,
     equalsPath,
+    notEqualsPath,
     maxLength,
     max,
     min,
