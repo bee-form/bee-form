@@ -1,8 +1,8 @@
 {
   "name": "bee-form-tunnels",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Validators to be used in both bee-form and sync-form",
-  "main": "dist/bee-form-tunnels.umd.min.js",
+  "main": "dist/bee-form-tunnels.umd.js",
   "author": "quanla",
   "license": "ISC",
   "dependencies": {},

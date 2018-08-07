@@ -9,7 +9,8 @@ exports.config = ({folder, name, index}) => {
     // const minify = process.env.MINIFY;
     // const format = process.env.FORMAT;
 
-    const minify = true;
+    // const minify = true;
+    const minify = false;
     const format = "umd";
 
     const es = format === 'es';
