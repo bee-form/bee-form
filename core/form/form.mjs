@@ -70,7 +70,7 @@ export function createForm(rawConfig, initData) {
 
                     const tunnel = field.getTunnelConfig();
                     if (tunnel) {
-                        return tunnelFormat(mv, tunnel);
+                        return tunnelFormat(mv, tunnel, state.data, path);
                     }
 
                     return mv;
@@ -88,7 +88,7 @@ export function createForm(rawConfig, initData) {
                         eventBus.addEvent({
                             init: timeoutResolve(debounce, chain(
                                 field.clearDebounceVv(),
-                                setViewValue(field, currentMv)(vv)
+                                setViewValue(field, currentMv, state.data)(vv)
                             )),
                             deprecated: (state) => {
                                 return field.getDebounceVv(state) !== vv ||
@@ -97,20 +97,27 @@ export function createForm(rawConfig, initData) {
                             },
                         });
                     } else {
-                        eventBus.invoke(setViewValue(field, field.getData(state))(vv));
+                        eventBus.invoke(setViewValue(field, field.getData(state), state.data)(vv));
                     }
                 },
                 flush: (path, face = "") => {
                     let field = wrapField({path, face, config});
 
+                    let reducers = [field.clearParseSuccessVvo()];
+
                     const debounceVv = field.getDebounceVv(state);
 
                     if (debounceVv != null) {
-                        eventBus.invoke(chain(
+                        reducers = [...reducers,
                             field.clearDebounceVv(),
-                            setViewValue(field, field.getData(state))(debounceVv)
-                        ));
+                            setViewValue(field, field.getData(state), state.data)(debounceVv)
+                        ];
+                        // eventBus.invoke(chain(
+                        //     field.clearDebounceVv(),
+                        //     setViewValue(field, field.getData(state))(debounceVv)
+                        // ));
                     }
+                    eventBus.invoke(chain(...reducers));
                 },
             };
         },
@@ -130,7 +137,7 @@ export function createForm(rawConfig, initData) {
 
 
 
-const setViewValue = (field, currentMv) => {
+const setViewValue = (field, currentMv, data) => {
 
     const wrapStateReducer = (reducer) => (state) => {
         if (!field.isDirty(state)) {
@@ -147,7 +154,7 @@ const setViewValue = (field, currentMv) => {
                 return wrapStateReducer(
                     chain(
                         field.setData(
-                            tunnelParse(vv, currentMv, tunnel)
+                            tunnelParse(vv, tunnel, currentMv, data, field.path)
                         ),
                         field.setParseSuccessVvo(vv),
                     )

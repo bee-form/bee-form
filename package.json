@@ -1,6 +1,6 @@
 {
   "name": "bee-form",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A form library that is based on event bus architecture",
   "scripts": {
     "publish": "node ./build/publish.js",

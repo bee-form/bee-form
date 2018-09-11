@@ -45,6 +45,7 @@ export const wrapField = ({path, face, config}) => {
         getDebounceVv   : getFace("debounce_vvo"),
         setDebounceVv   : (vv) => setFace("debounce_vvo", vv),
         clearDebounceVv : () => deleteFace("debounce_vvo"),
+        clearParseSuccessVvo : () => deleteFace("parse_success_vvo"),
         hasDebounceVv   : (state) => {
             return face ?
                 getFace("debounce_vvo")(state) !== undefined :
@@ -94,7 +95,7 @@ export const wrapField = ({path, face, config}) => {
 
         getTunnelConfig     : () => getFaceConfig("tunnel", getPathConfig(config, path), face),
         getDebounceConfig   : () => getFaceConfig("debounce", getPathConfig(config, path), face),
-
+        path,
     };
 };
 
